@@ -51,3 +51,5 @@ const songs = [
         img:  './MusicIMG/8.jpg',
     },
 ]
+
+const dittconmemay = 1;
