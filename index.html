@@ -7,10 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
 </head>
 <body>
-<div class="player">
+<div class="player ">
   <!-- Dashboard -->
   <div class="dashboard">
     <!-- Header -->
@@ -21,7 +20,7 @@
 
     <!-- CD -->
     <div class="cd">
-      <div class="cd-thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
+      <div class="cd-thumb" style="background-image: url('./MusicIMG/1.jpg')">
       </div>
     </div>
 
@@ -40,12 +39,12 @@
       <div class="btn btn-next">
         <i class="fas fa-step-forward"></i>
       </div>
-      <div class="btn btn-random">
+      <div class="btn btn-random ">
         <i class="fas fa-random"></i>
       </div>
     </div>
 
-    <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+    <input id="progress" class="progress" type="range" value="0" step="2" min="0" max="100">
 
     <audio id="audio" src=""></audio>
   </div>
@@ -87,6 +86,8 @@
     </div>
   </div>
 </div>
+
+<script src="app.js"></script>
 
 <!-- Design from: https://static.collectui.com/shots/3671744/musicloud-revolutionary-app-for-music-streaming-large -->
 </body>
