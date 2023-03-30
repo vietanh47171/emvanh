@@ -17,6 +17,8 @@ const btnRepeat = $('.btn-repeat')
 const app = {
     currentIndex: 0,
     isplaying: false,
+    isrepeat: false,
+    israndom: false,
     songs: [
         {
             name: 'Only You',
@@ -156,13 +158,13 @@ const app = {
                 const progressPercent = Math.floor(audio.currentTime/audio.duration*100)
                 progress.value = progressPercent
             }
-            
 
-            if(audio.duration === audio.currentTime){
+            if(audio.duration===audio.currentTime && _this.isrepeat){
+                audio.play()
+            } else if(audio.duration===audio.currentTime){
                 _this.nextSong()
                 audio.play()
             }
-        
         }
 
         // Seek 
@@ -185,10 +187,29 @@ const app = {
         } 
         
         
-
+        // bật tắt repeat
         btnRepeat.onclick = function(){
-            btnRepeat.classList.add('active')
+            if(_this.isrepeat){
+                btnRepeat.classList.remove('active')
+                _this.isrepeat = false
+            } else {
+                btnRepeat.classList.add('active')
+                _this.isrepeat = true
+            }
+        }
+        
+        // Bật tắt random
+        btnRandom.onclick = function(){
+            if(_this.israndom){
+                btnRandom.classList.remove('active')
+                _this.israndom = false
+            } else {
+                btnRandom.classList.add('active')
+                _this.israndom = true
+            }
         } 
+
+
         
        
     },
@@ -218,6 +239,11 @@ const app = {
         this.loadCurrentSong()
     },
 
+    repeatsong:function(){
+        if(audio.duration===audio.currentTime){
+            audio.play()
+        }
+    },
 
 
     // Hàm chạy ứng dụng
@@ -236,3 +262,4 @@ app.start()
 
 
 
+console.log
